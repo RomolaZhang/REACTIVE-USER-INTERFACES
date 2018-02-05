@@ -9,12 +9,15 @@ class Article extends Component {
           <div className = "Container">
              <div className = "top-title">{this.props.topTitle}</div>
              <div className = "title">{this.props.title}</div>
-             <div className = "content">{this.props.content}</div>
-             <div className = "author">By {this.props.author}</div>
+             <p>{this.props.content}</p>
+             <div className = "author">
+                By <span>{this.props.author}
+                </span>
+             </div>
           </div>
-          <div className = "pic">
+          <figure>
           <img src = {this.props.pic}/>
-          </div>
+          </figure>
       </div>
     );
   }
