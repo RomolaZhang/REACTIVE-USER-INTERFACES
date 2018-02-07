@@ -1,0 +1,13 @@
+.DisplayBox{
+  font-family: helvetica,sans-serif;
+  color: #676767;
+  margin: auto;
+  margin-top: 28px;
+  text-align: center;
+  width: 640px;
+  font-size: 35px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #ededed;
+  border-radius: 7px;
+}
