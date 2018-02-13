@@ -13,7 +13,7 @@ class Button extends Component {
 
   render() {
     let classes = 'Button';
-    
+
     if(this.props.selected){
       classes += ' active';
     }

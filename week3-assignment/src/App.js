@@ -12,7 +12,7 @@ class App extends Component {
       selected : null ,
       content : "You have selected: "
     }
-    
+
     this.buttonClicked = this.buttonClicked.bind(this);
   }
 
@@ -27,15 +27,15 @@ class App extends Component {
 
   render() {
 
-    const isButton1 = this.state.selected === "First Button";
-    const isButton2 = this.state.selected === "Second Button";
-    const isButton3 = this.state.selected === "Third Button";
+    const data = ["First Button","Second Button","Third Button"];
+
+    const buttons = data.map((button) => {
+    return <Button selected = {this.state.selected === button} label = {button} onClick = {this.buttonClicked} />
+  });
 
     return (
       <div className="App">
-          <Button selected = {isButton1} label = "First Button" onClick = {this.buttonClicked} />
-          <Button selected = {isButton2} label = "Second Button" onClick = {this.buttonClicked} />
-          <Button selected = {isButton3} label = "Third Button" onClick = {this.buttonClicked} />
+          {buttons}
           <DisplayBox displayContent = {this.state.content} />
       </div>
     );
