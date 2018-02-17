@@ -1,0 +1,30 @@
+@font-face {
+  font-family: CourierLight;
+  src: url("CourierM.ttf");
+}
+
+.Display {
+}
+
+.Display .EventName {
+  font-family: Helvetica;
+  font-size: 78px;
+  font-weight: 700;
+  padding-bottom: 120px;
+  line-height: 92px;
+  text-transform: uppercase;
+}
+
+.Display .Location {
+  font-family: CourierLight;
+  font-size: 22px;
+  font-weight: 100;
+  padding-bottom: 10px;
+}
+
+.Display .Time {
+  font-family: CourierLight;
+  font-size: 22px;
+  font-weight: 100;
+  padding-bottom: 45px;
+}

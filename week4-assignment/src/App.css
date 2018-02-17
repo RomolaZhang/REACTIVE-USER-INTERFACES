@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  margin-left: 200px;
+  margin-top: 30px;
+}
+
+.inputs {
+  margin-right: 40px;
+}
+
+.displays {
+  background-color: black;
+  color: white;
+  padding-left: 50px;
+  padding-top: 40px;
+  width: 420px;
+}

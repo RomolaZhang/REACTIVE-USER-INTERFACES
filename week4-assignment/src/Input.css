@@ -1,0 +1,21 @@
+.Input .label {
+  font-family: Helvetica;
+  color: #9b9b9b;
+  font-size: 14px;
+  font-weight: lighter;
+  padding-bottom: 10px;
+}
+
+input {
+  font-family: Helvetica;
+  font-size: 23px;
+  color: #5a5a5a;
+  outline: none;
+  border: none;
+  padding-bottom: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: thin;
+  border-bottom-color: lightgrey;
+  margin-bottom: 30px;
+  width: 340px;
+}
