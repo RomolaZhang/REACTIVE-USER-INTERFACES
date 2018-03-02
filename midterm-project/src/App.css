@@ -1,0 +1,144 @@
+.App {
+}
+
+.topBar {
+  width: -webkit-fill-available;
+  background-color: white;
+  font-family: Helvetica Neue;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  border-bottom-style: solid;
+  border-width: 1.2px;
+  border-color: #707070;
+  text-align: center;
+  position: fixed;
+  display: inline-flex;
+}
+
+.moreIcon {
+  margin: auto;
+  margin-left: 20px;
+  width: 25.5px;
+  height: 8px;
+}
+
+.addIcon {
+  width: 23px;
+}
+
+figure {
+  margin: 0;
+  display: inline-block;
+}
+
+p {
+  font-size: 22px;
+  color: #555555;
+  display: inline-block;
+  margin: 0;
+  padding-left: 24%;
+  padding-right: 24%;
+}
+
+.main {
+  display: flex;
+}
+
+.contacts {
+  width: 380px;
+}
+
+.sideBar {
+  text-align: right;
+  color: #0679c1;
+  font-size: 18px;
+  position: fixed;
+  top: 140px;
+  right: 15px;
+}
+
+.letterButtons {
+  text-decoration: none;
+  text-align: center;
+  font-size: 16px;
+  color: #0679c1;
+  margin: auto;
+  outline: none;
+  display: block;
+  line-height: 22px;
+}
+
+.contact {
+  border-style: solid;
+  border-color: #707070;
+  width: 353px;
+  border-radius: 3px;
+  border-width: 1.2px;
+  margin-top: 10px;
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+.bund {
+  margin: 0;
+}
+
+.anchor {
+  display: block;
+  height: 56px; /*same height as header*/
+  margin-top: -56px; /*same height as header*/
+  visibility: hidden;
+}
+
+.name {
+  font-family: Helvetica;
+  color: #045e96;
+  font-size: 18px;
+  padding: 8px;
+  padding-bottom: 6.5px;
+}
+
+.email {
+  font-family: Helvetica;
+  color: #4e4e4e;
+  font-size: 12px;
+  padding: 8px;
+  padding-top: 0;
+}
+
+.searchLine {
+  display: inline-flex;
+  align-items: center;
+}
+
+.blackspace {
+  height: 65px;
+  width: 10px;
+}
+
+.searchBar {
+  font-size: 16px;
+  margin-left: 12px;
+  margin-right: 5px;
+  width: 330px;
+  height: 25px;
+  text-align: center;
+  border: solid;
+  border-width: 1px;
+  border-radius: 3px;
+  border-color: #707070;
+  outline: none;
+}
+
+.tag {
+  margin-left: 10px;
+}
+
+.contactNum {
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 18px;
+  color: #666666;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}

@@ -1,0 +1,13 @@
+.LetterButton {
+  width: 20px;
+  text-align: center;
+  margin: auto;
+}
+
+button {
+  text-align: center;
+  font-size: 16px;
+  color: #0679c1;
+  margin: auto;
+  outline: none;
+}
