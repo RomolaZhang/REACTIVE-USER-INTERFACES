@@ -1,0 +1,15 @@
+.Option {
+  margin-left: 23px;
+  margin-top: 3px;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  color: #505050;
+  padding: 4px;
+  padding-left: 8px;
+  border-radius: 4px;
+  width: 370px;
+}
+
+.active {
+  background-color: #eaf7ff;
+}

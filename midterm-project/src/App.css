@@ -1,9 +1,18 @@
 .App {
 }
 
+.shade {
+  background-color: black;
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
 .topBar {
   width: -webkit-fill-available;
-  background-color: white;
   font-family: Helvetica Neue;
   padding-top: 20px;
   padding-bottom: 10px;
@@ -13,6 +22,7 @@
   text-align: center;
   position: fixed;
   display: inline-flex;
+  background-color: white;
 }
 
 .moreIcon {
@@ -31,13 +41,22 @@ figure {
   display: inline-block;
 }
 
+svg {
+  color: #057fcb;
+}
+
 p {
+  display: inline-block;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.center {
   font-size: 22px;
   color: #555555;
   display: inline-block;
-  margin: 0;
   padding-left: 24%;
-  padding-right: 24%;
+  padding-right: 20%;
 }
 
 .main {
@@ -55,55 +74,6 @@ p {
   position: fixed;
   top: 140px;
   right: 15px;
-}
-
-.letterButtons {
-  text-decoration: none;
-  text-align: center;
-  font-size: 16px;
-  color: #0679c1;
-  margin: auto;
-  outline: none;
-  display: block;
-  line-height: 22px;
-}
-
-.contact {
-  border-style: solid;
-  border-color: #707070;
-  width: 353px;
-  border-radius: 3px;
-  border-width: 1.2px;
-  margin-top: 10px;
-  margin-left: 12px;
-  margin-right: 0;
-}
-
-.bund {
-  margin: 0;
-}
-
-.anchor {
-  display: block;
-  height: 56px; /*same height as header*/
-  margin-top: -56px; /*same height as header*/
-  visibility: hidden;
-}
-
-.name {
-  font-family: Helvetica;
-  color: #045e96;
-  font-size: 18px;
-  padding: 8px;
-  padding-bottom: 6.5px;
-}
-
-.email {
-  font-family: Helvetica;
-  color: #4e4e4e;
-  font-size: 12px;
-  padding: 8px;
-  padding-top: 0;
 }
 
 .searchLine {
@@ -136,9 +106,40 @@ p {
 
 .contactNum {
   text-align: center;
-  font-family: Helvetica;
+  font-family: Helvetica Neue;
   font-size: 18px;
   color: #666666;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.NoOption {
+  display: none;
+}
+
+.Options {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  height: 470px;
+  width: 100%;
+  background-color: white;
+}
+
+.top-bar {
+  text-align: center;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  padding: 10px;
+  color: #555555;
+  border-bottom-style: solid;
+  border-width: thin;
+}
+
+.optionName {
+  font-family: Helvetica Neue;
+  font-size: 20px;
+  color: #045e96;
+  margin-left: 20px;
+  margin-top: 15px;
 }

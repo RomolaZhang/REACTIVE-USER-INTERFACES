@@ -1,0 +1,33 @@
+.contact {
+  border-style: solid;
+  border-color: #707070;
+  width: 353px;
+  border-radius: 3px;
+  border-width: 1.2px;
+  margin-top: 10px;
+  margin-left: 12px;
+  margin-right: 0;
+}
+
+.anchor {
+  display: block;
+  height: 56px; /*same height as header*/
+  margin-top: -56px; /*same height as header*/
+  visibility: hidden;
+}
+
+.name {
+  font-family: Helvetica;
+  color: #045e96;
+  font-size: 18px;
+  padding: 8px;
+  padding-bottom: 6.5px;
+}
+
+.detail {
+  font-family: Helvetica;
+  color: #4e4e4e;
+  font-size: 12px;
+  padding: 8px;
+  padding-top: 0;
+}
