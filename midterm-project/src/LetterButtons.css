@@ -2,9 +2,17 @@
   text-decoration: none;
   text-align: center;
   font-size: 16px;
-  color: #0679c1;
   margin: auto;
   outline: none;
   display: block;
   line-height: 22px;
+}
+
+.Cleanair-letterButtons {
+  color: #0679c1;
+}
+
+.Warmwind-letterButtons {
+  color: white;
+  text-shadow: -2px 3px hsla(0, 0%, 0%, 0.2);
 }

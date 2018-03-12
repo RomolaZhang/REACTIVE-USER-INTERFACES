@@ -3,13 +3,27 @@
   margin-top: 3px;
   font-family: Helvetica Neue;
   font-size: 18px;
-  color: #505050;
   padding: 4px;
   padding-left: 8px;
   border-radius: 4px;
-  width: 370px;
+  width: 355px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
 }
 
-.active {
-  background-color: #eaf7ff;
+.Option.Cleanair {
+  color: #0679c1;
+}
+
+.Option.Warmwind {
+  color: #f9ddc5;
+}
+
+.active.Cleanair {
+  background-color: #f0f0f0;
+}
+
+.active.Warmwind {
+  background-color: #a0a0a0;
+  box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.2);
 }

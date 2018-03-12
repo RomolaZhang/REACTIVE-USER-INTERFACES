@@ -12,10 +12,12 @@ class Option extends Component {
   }
 
   render() {
-    let classes = "Option";
+    let classes = "Option ";
     if (this.props.selected) {
-      classes += " active";
+      classes += "active ";
     }
+
+    classes += this.props.colorStyle.replace(/\s/g, "");
     return (
       <div className={classes} onClick={this.onClick}>
         {this.props.text}

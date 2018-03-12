@@ -3,9 +3,14 @@ import "./LetterButtons.css";
 
 class LetterButtons extends Component {
   render() {
+    const classColor = this.props.colorStyle.replace(/\s/g, "");
+
     return (
       <div className="LetterButtons">
-        <a className="letterButtons" href={this.props.label}>
+        <a
+          className={"letterButtons " + classColor + "-letterButtons"}
+          href={this.props.label}
+        >
           {this.props.letter}
         </a>
       </div>
