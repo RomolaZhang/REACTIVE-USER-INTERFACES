@@ -4,8 +4,6 @@ import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
 import HomePage from "./HomePage";
 import ContactPage from "./ContactPage";
-import A from "./A.js";
-import B from "./B.js";
 
 class App extends Component {
   constructor(props) {
@@ -200,6 +198,8 @@ class App extends Component {
     this.setState({
       colorStyle: label
     });
+    const classColor = label.replace(/\s/g, "");
+    document.body.className = classColor;
   }
 
   render() {
@@ -231,8 +231,6 @@ class App extends Component {
               );
             }}
           />
-          <div> {this.state.colorStyle === "Warm wind" && <A />} </div>
-          <div> {this.state.colorStyle === "Dark fusion" && <B />}</div>
         </div>
       </Router>
     );
