@@ -19,11 +19,20 @@
   color: #f9ddc5;
 }
 
+.Option.Darkfusion {
+  color: #09937b;
+}
+
 .active.Cleanair {
   background-color: #f0f0f0;
 }
 
 .active.Warmwind {
   background-color: #a0a0a0;
+  box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.active.Darkfusion {
+  background-color: #373737;
   box-shadow: 0 1px 2px 0 hsla(0, 0%, 0%, 0.2);
 }

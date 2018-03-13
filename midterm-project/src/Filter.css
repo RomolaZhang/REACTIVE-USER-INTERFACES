@@ -1,0 +1,25 @@
+.Filter {
+  margin-left: 23px;
+  margin-top: 12px;
+  font-family: Helvetica Neue;
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  font-weight: 300;
+  letter-spacing: 0.6px;
+  display: block;
+  float: left;
+  clear: left;
+}
+
+.Filter.Cleanair {
+  color: #0679c1;
+}
+
+.Filter.Warmwind {
+  color: #f9ddc5;
+}
+
+.Filter.Darkfusion {
+  color: #09937b;
+}

@@ -7,10 +7,7 @@ class LetterButtons extends Component {
 
     return (
       <div className="LetterButtons">
-        <a
-          className={"letterButtons " + classColor + "-letterButtons"}
-          href={this.props.label}
-        >
+        <a className={"letterButtons " + classColor} href={this.props.label}>
           {this.props.letter}
         </a>
       </div>

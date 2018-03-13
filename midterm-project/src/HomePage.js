@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import "./HomePage.css";
 import addIcon from "./add icon@3x.png";
 import moreIcon from "./more icon@3x.png";
@@ -7,6 +6,8 @@ import tag from "./tag.png";
 import Contact from "./Contact";
 import LetterButtons from "./LetterButtons";
 import Option from "./Option";
+import Filter from "./Filter";
+import FilterTop from "./FilterTop";
 
 class HomePage extends Component {
   constructor(props) {
@@ -14,7 +15,10 @@ class HomePage extends Component {
 
     this.onSearch = this.onSearch.bind(this);
     this.options = this.options.bind(this);
-    this.hideOptions = this.hideOptions.bind(this);
+    this.filters = this.filters.bind(this);
+    this.addFilter = this.addFilter.bind(this);
+    this.removeFilter = this.removeFilter.bind(this);
+    this.hide = this.hide.bind(this);
     this.previewing = this.previewing.bind(this);
     this.sorting = this.sorting.bind(this);
     this.colorstyling = this.colorstyling.bind(this);
@@ -25,8 +29,27 @@ class HomePage extends Component {
       email: true,
       address: false,
       phoneNumber: false,
-      sorting: "First name"
+      sorting: "First name",
+      filter: false,
+      filters: []
     };
+  }
+
+  addFilter(label) {
+    const new_filters = this.state.filters;
+    new_filters.push(label);
+    this.setState({
+      filters: new_filters
+    });
+  }
+
+  removeFilter(label) {
+    const new_filters = this.state.filters;
+    const index = new_filters.indexOf(label);
+    new_filters.splice(index, 1);
+    this.setState({
+      filters: new_filters
+    });
   }
 
   colorstyling(label) {
@@ -37,11 +60,19 @@ class HomePage extends Component {
     this.setState({
       options: true
     });
+    console.log(this.state.filters);
   }
 
-  hideOptions() {
+  filters() {
     this.setState({
-      options: false
+      filter: true
+    });
+  }
+
+  hide() {
+    this.setState({
+      options: false,
+      filter: false
     });
   }
 
@@ -71,9 +102,13 @@ class HomePage extends Component {
 
   render() {
     let arrCopy = this.props.contacts.slice();
+    let jobs = [];
 
     if (this.state.onSearch !== "") {
       arrCopy = arrCopy.filter(contact => {
+        if (!jobs.includes(contact.job)) {
+          jobs.push(contact.job);
+        }
         const input = this.state.search.toLowerCase();
         const name = contact.name.toLowerCase();
         return name.match(input);
@@ -93,6 +128,17 @@ class HomePage extends Component {
         if (a.name[p + 1] < b.name[q + 1]) return -1;
         if (a.name[p + 1] > b.name[q + 1]) return 1;
         return 0;
+      });
+    }
+
+    if (this.state.filters.length !== 0) {
+      arrCopy = arrCopy.filter(contact => {
+        let i;
+        for (i = 0; i < this.state.filters.length; i++) {
+          if (contact.job.match(this.state.filters[i])) {
+            return contact;
+          }
+        }
       });
     }
 
@@ -116,6 +162,8 @@ class HomePage extends Component {
           address={contact.address}
           emailState={this.state.email}
           email={contact.email}
+          phoneNumber={contact.phoneNumber}
+          phoneNumberState={this.state.phoneNumber}
           colorStyle={this.props.colorStyle}
         />
       );
@@ -134,11 +182,22 @@ class HomePage extends Component {
     });
 
     let classes = "";
-    let optionClass = "NoOption ";
+    let optionClass = "No ";
+    let filterClass = "No ";
+    let filterTop = "No ";
 
-    if (this.state.options === true) {
+    if (this.state.options) {
       classes += "shade";
-      optionClass = " Options ";
+      optionClass = " Yes ";
+    }
+
+    if (this.state.filter) {
+      classes += "shade";
+      filterClass = " Yes ";
+    }
+
+    if (this.state.filters.length > 0) {
+      filterTop = " filterTop ";
     }
 
     const preview = [
@@ -160,7 +219,7 @@ class HomePage extends Component {
       );
     });
 
-    const sorting = ["First name", "Last name", "Contact frequency"];
+    const sorting = ["First name", "Last name"];
     const sortings = sorting.map(sorting => {
       return (
         <Option
@@ -173,7 +232,7 @@ class HomePage extends Component {
       );
     });
 
-    const colorStyle = ["Clean air", "Ocean blue", "Warm wind"];
+    const colorStyle = ["Clean air", "Dark fusion", "Warm wind"];
     const colorStyles = colorStyle.map(colorStyle => {
       return (
         <Option
@@ -182,6 +241,28 @@ class HomePage extends Component {
           text={colorStyle}
           label={colorStyle}
           onClick={this.colorstyling}
+        />
+      );
+    });
+
+    const tags = jobs.map(job => {
+      return (
+        <Filter
+          selected={this.state.filters.includes(job)}
+          text={job}
+          colorStyle={this.props.colorStyle}
+          addFilter={this.addFilter}
+          removeFilter={this.removeFilter}
+        />
+      );
+    });
+
+    const filtersTops = this.state.filters.map(filter => {
+      return (
+        <FilterTop
+          label={filter}
+          colorStyle={this.props.colorStyle}
+          onClick={this.removeFilter}
         />
       );
     });
@@ -199,8 +280,7 @@ class HomePage extends Component {
             />
           </figure>
           <div className={"center " + classColor}>
-            <p> All Contacts </p>
-            <i className={"fas fa-angle-down " + classColor} />
+            <p> myContact </p>
           </div>
           <figure>
             <img className={"addIcon " + classColor} src={addIcon} />
@@ -210,12 +290,20 @@ class HomePage extends Component {
         <div className="searchLine">
           <input
             className={"searchBar " + classColor}
-            placeholder="Search in All Contacts"
+            placeholder="Search here"
             onChange={this.onSearch}
           />
           <div className="tag">
-            <img className={"tagimg " + classColor} src={tag} />
+            <img
+              className={"tagimg " + classColor}
+              onClick={this.filters}
+              src={tag}
+            />
           </div>
+        </div>
+        <div className={filterTop + classColor}>
+          {"Filtered by: "}
+          {filtersTops}
         </div>
         <div className="main">
           <div className="contacts">
@@ -226,7 +314,8 @@ class HomePage extends Component {
           </div>
           <div className={"sideBar " + classColor}>#{letterButtons}</div>
         </div>
-        <div className={classes} onClick={this.hideOptions} />
+
+        <div className={classes} onClick={this.hide} />
 
         <div className={optionClass + classColor}>
           <div className={"top-bar " + classColor}>Contact List Options</div>
@@ -236,6 +325,12 @@ class HomePage extends Component {
           {sortings}
           <div className={"optionName " + classColor}>Color Style</div>
           {colorStyles}
+        </div>
+
+        <div className={filterClass + classColor}>
+          <div className={"top-bar " + classColor}>Filters</div>
+          <div className={"jobs " + classColor}> Jobs </div>
+          {tags}
         </div>
       </div>
     );

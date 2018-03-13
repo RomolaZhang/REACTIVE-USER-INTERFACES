@@ -5,6 +5,10 @@
   background-color: #8e8075;
 }
 
+.HomePage.Darkfusion {
+  background: #313131;
+}
+
 .shade {
   background-color: black;
   opacity: 0.6;
@@ -37,6 +41,11 @@
   box-shadow: 0 4px 5px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+.topBar.Darkfusion {
+  background-color: #1b1b1f;
+  box-shadow: 0 4px 5px 0 hsla(0, 0%, 0%, 0.2);
+}
+
 .moreIcon {
   margin: auto;
   margin-left: 20px;
@@ -49,6 +58,10 @@
   filter: brightness(100);
 }
 
+.moreIcon.Darkfusion {
+  filter: hue-rotate(-40deg);
+}
+
 .addIcon {
   width: 23px;
 }
@@ -56,6 +69,10 @@
 .addIcon.Warmwind {
   filter: grayscale(100);
   filter: brightness(100);
+}
+
+.addIcon.Darkfusion {
+  filter: hue-rotate(-40deg);
 }
 
 figure {
@@ -76,6 +93,10 @@ figure {
   filter: brightness(100);
 }
 
+.tagimg.Darkfusion {
+  filter: hue-rotate(-40deg);
+}
+
 p {
   display: inline-block;
   margin: 0;
@@ -86,8 +107,8 @@ p {
 .center {
   font-size: 22px;
   display: inline-block;
-  padding-left: 24%;
-  padding-right: 20%;
+  padding-left: 25%;
+  padding-right: 25%;
 }
 
 .center.Cleanair {
@@ -96,6 +117,10 @@ p {
 
 .center.Warmwind {
   color: white;
+}
+
+.center.Darkfusion {
+  color: #e6e6e6;
 }
 
 .main {
@@ -121,6 +146,11 @@ p {
 .sideBar.Warmwind {
   color: white;
   text-shadow: -2px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.sideBar.Darkfusion {
+  color: #0fa86b;
+  text-shadow: -2px 3px 0 hsla(0, 0%, 0%, 0.2);
 }
 
 .searchLine {
@@ -156,6 +186,13 @@ p {
   box-shadow: 0 5px 6px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+.searchBar.Darkfusion {
+  border: none;
+  background-color: #17181c;
+  color: #cecece;
+  box-shadow: 0 3px 4px 0 hsla(0, 0%, 0%, 0.2);
+}
+
 .contactNum {
   text-align: center;
   font-family: Helvetica Neue;
@@ -172,24 +209,51 @@ p {
   color: #f9ddc5;
 }
 
-.NoOption {
+.contactNum.Darkfusion {
+  color: #bfbfbf;
+}
+
+.No {
   display: none;
 }
 
-.Options {
+.Yes {
   display: block;
   position: fixed;
   bottom: 0;
-  height: 470px;
+  height: 450px;
   width: 100%;
 }
 
-.Options.Cleanair {
+.filterTop {
+  margin-left: 18px;
+  margin-top: 5px;
+  font-family: Helvetica Neue;
+  font-size: 14px;
+  font-weight: 320;
+  display: inline-block;
+  letter-spacing: 0.55px;
+  margin-right: 15px;
+}
+
+.filterTop.Warmwind {
+  color: white;
+}
+
+.filterTop.Darkfusion {
+  color: #bfbfbf;
+}
+
+.Yes.Cleanair {
   background-color: white;
 }
 
-.Options.Warmwind {
+.Yes.Warmwind {
   background-color: #8e8075;
+}
+
+.Yes.Darkfusion {
+  background-color: #1b1b1f;
 }
 
 .top-bar {
@@ -212,6 +276,12 @@ p {
   box-shadow: 0 4px 5px 0 hsla(0, 0%, 0%, 0.2);
 }
 
+.top-bar.Darkfusion {
+  color: #e6e6e6;
+  background-color: #09937b;
+  box-shadow: 0 6px 6px 0 hsla(0, 0%, 0%, 0.2);
+}
+
 .optionName {
   font-family: Helvetica Neue;
   font-size: 20px;
@@ -225,4 +295,27 @@ p {
 
 .optionName.Warmwind {
   color: white;
+}
+
+.optionName.Darkfusion {
+  color: #e6e6e6;
+}
+
+.jobs {
+  margin: 15px;
+  margin-bottom: 0;
+  font-family: Helvetica Neue;
+  font-size: 20px;
+}
+
+.jobs.Cleanair {
+  color: #045e96;
+}
+
+.jobs.Warmwind {
+  color: white;
+}
+
+.jobs.Darkfusion {
+  color: #c7c7c7;
 }

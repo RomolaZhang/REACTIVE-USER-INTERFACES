@@ -5,6 +5,7 @@ import "./App.css";
 import HomePage from "./HomePage";
 import ContactPage from "./ContactPage";
 import A from "./A.js";
+import B from "./B.js";
 
 class App extends Component {
   constructor(props) {
@@ -231,6 +232,7 @@ class App extends Component {
             }}
           />
           <div> {this.state.colorStyle === "Warm wind" && <A />} </div>
+          <div> {this.state.colorStyle === "Dark fusion" && <B />}</div>
         </div>
       </Router>
     );

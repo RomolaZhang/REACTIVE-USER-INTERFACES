@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./ContactPage.css";
 import Return from "./return.png";
+import ProfileIcon from "./profileicon.png";
 
 class ContactPage extends Component {
   render() {
@@ -16,6 +17,7 @@ class ContactPage extends Component {
         </div>
         <div className={"line " + classColor} />
         <div className={"circleimg " + classColor} />
+        <img className="img" src={ProfileIcon} />
         <div className={"bigname " + classColor}>{this.props.contact.name}</div>
         <div className={"job " + classColor}>{this.props.contact.job}</div>
         <div className={"property " + classColor}>email</div>

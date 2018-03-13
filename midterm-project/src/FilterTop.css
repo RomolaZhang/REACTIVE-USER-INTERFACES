@@ -1,0 +1,26 @@
+.filterTops {
+  font-family: Helvetica Neue;
+  font-weight: 340;
+  font-size: 15px;
+  display: inline-block;
+  padding: 4px;
+  border-radius: 3px;
+  margin-right: 5px;
+  margin-top: 3px;
+}
+
+.filterTops.Cleanair {
+  background-color: #f0f0f0;
+  color: #11679d;
+}
+
+.filterTops.Warmwind {
+  background-color: #f9ddc5;
+  color: #cc7272;
+  box-shadow: 0 2px 3px 0 hsla(0, 0%, 0%, 0.2);
+}
+
+.filterTops.Darkfusion {
+  background-color: #17181c;
+  color: #09937b;
+}

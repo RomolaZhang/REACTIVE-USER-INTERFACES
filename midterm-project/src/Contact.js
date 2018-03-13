@@ -6,9 +6,9 @@ class Contact extends Component {
   render() {
     let emailClasses = "detail ";
     let addressClasses = "detail ";
+    let phoneNumberClasses = "detail ";
 
     const classColor = this.props.colorStyle.replace(/\s/g, "");
-    console.log(this.props.colorStyle);
 
     if (!this.props.emailState) {
       emailClasses += " hide ";
@@ -16,6 +16,10 @@ class Contact extends Component {
 
     if (!this.props.addressState) {
       addressClasses += " hide ";
+    }
+
+    if (!this.props.phoneNumberState) {
+      phoneNumberClasses += " hide ";
     }
 
     return (
@@ -27,6 +31,9 @@ class Contact extends Component {
             <div className={emailClasses + classColor}>{this.props.email}</div>
             <div className={addressClasses + classColor}>
               {this.props.address}
+            </div>
+            <div className={phoneNumberClasses + classColor}>
+              {this.props.phoneNumber}
             </div>
           </div>
         </Link>

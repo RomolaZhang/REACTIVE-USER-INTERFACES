@@ -8,11 +8,16 @@
   line-height: 22px;
 }
 
-.Cleanair-letterButtons {
+.Cleanair.letterButtons {
   color: #0679c1;
 }
 
-.Warmwind-letterButtons {
+.Warmwind.letterButtons {
   color: white;
   text-shadow: -2px 3px hsla(0, 0%, 0%, 0.2);
+}
+
+.Darkfusion.letterButtons {
+  color: #40ac80;
+  text-shadow: -2px 3px 0 hsla(0, 0%, 0%, 0.2);
 }
