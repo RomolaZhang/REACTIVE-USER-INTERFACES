@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Link } from "react-router-dom";
 import "./App.css";
 import HomePage from "./HomePage";
 import ContactPage from "./ContactPage";
+import New from "./New";
 
 class App extends Component {
   constructor(props) {
@@ -230,6 +231,11 @@ class App extends Component {
                 />
               );
             }}
+          />
+          <Route
+            exact
+            path="/new"
+            render={props => <New colorStyle={this.state.colorStyle} />}
           />
         </div>
       </Router>

@@ -1,0 +1,35 @@
+input.bigname {
+  border-style: none;
+  border-bottom-style: solid;
+  margin-left: 107px;
+  width: 200px;
+  outline: none;
+  border-width: thin;
+  margin-top: 10px;
+}
+
+input.content {
+  padding: 5px;
+  width: 160px;
+  border-style: solid;
+  border-radius: 5px;
+  outline: none;
+  border-width: thin;
+  margin-top: 10px;
+}
+
+input.bigname.Cleanair {
+  border-color: #707070;
+}
+
+input.content.Cleanair {
+  border-color: #8d8d8d;
+}
+
+input.Darkfusion {
+  background-color: transparent;
+}
+
+input.Warmwind {
+  background-color: transparent;
+}

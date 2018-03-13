@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 import addIcon from "./add icon@3x.png";
 import moreIcon from "./more icon@3x.png";
@@ -282,9 +283,11 @@ class HomePage extends Component {
           <div className={"center " + classColor}>
             <p> myContact </p>
           </div>
-          <figure>
-            <img className={"addIcon " + classColor} src={addIcon} />
-          </figure>
+          <Link to="/new">
+            <figure>
+              <img className={"addIcon " + classColor} src={addIcon} />
+            </figure>
+          </Link>
         </div>
         <div className="blackspace" />
         <div className="searchLine">
