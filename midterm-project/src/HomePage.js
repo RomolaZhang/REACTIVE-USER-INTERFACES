@@ -1,14 +1,19 @@
+//import React
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import "./HomePage.css";
-import addIcon from "./add icon@3x.png";
-import moreIcon from "./more icon@3x.png";
-import tag from "./tag.png";
+
+//import Components
 import Contact from "./Contact";
 import LetterButtons from "./LetterButtons";
 import Option from "./Option";
 import Filter from "./Filter";
 import FilterTop from "./FilterTop";
+
+//import Styling things
+import "./HomePage.css";
+import addIcon from "./add icon@3x.png";
+import moreIcon from "./more icon@3x.png";
+import tag from "./tag.png";
 
 class HomePage extends Component {
   constructor(props) {
@@ -36,6 +41,10 @@ class HomePage extends Component {
     };
   }
 
+  colorstyling(label) {
+    this.props.colorstyling(label);
+  }
+
   addFilter(label) {
     const new_filters = this.state.filters;
     new_filters.push(label);
@@ -53,15 +62,10 @@ class HomePage extends Component {
     });
   }
 
-  colorstyling(label) {
-    this.props.colorstyling(label);
-  }
-
   options() {
     this.setState({
       options: true
     });
-    console.log(this.state.filters);
   }
 
   filters() {
@@ -103,8 +107,10 @@ class HomePage extends Component {
 
   render() {
     let arrCopy = this.props.contacts.slice();
+
     let jobs = [];
 
+    //search
     if (this.state.onSearch !== "") {
       arrCopy = arrCopy.filter(contact => {
         if (!jobs.includes(contact.job)) {
@@ -116,6 +122,7 @@ class HomePage extends Component {
       });
     }
 
+    //sorting
     if (this.state.sorting === "First name") {
       arrCopy = arrCopy.sort(function(a, b) {
         if (a.name < b.name) return -1;
@@ -132,6 +139,7 @@ class HomePage extends Component {
       });
     }
 
+    //filtering
     if (this.state.filters.length !== 0) {
       arrCopy = arrCopy.filter(contact => {
         let i;
@@ -146,13 +154,12 @@ class HomePage extends Component {
     const contactNum = arrCopy.length;
     const letters = [];
 
+    //map out contact elements and get the inital letters
     const contacts = arrCopy.map((contact, i) => {
       let label = contact.name[0].toUpperCase();
-
       if (!letters.includes(label)) {
         letters.push(label);
       }
-
       return (
         <Contact
           key={"contact" + contact.id}
@@ -170,6 +177,7 @@ class HomePage extends Component {
       );
     });
 
+    //map out the letter buttons
     const letterButtons = letters.map((letter, i) => {
       const label = "#" + letter;
       return (
@@ -182,6 +190,7 @@ class HomePage extends Component {
       );
     });
 
+    //assign classes to elements in order to change their display mode
     let classes = "";
     let optionClass = "No ";
     let filterClass = "No ";
@@ -207,10 +216,12 @@ class HomePage extends Component {
       ["phone number", "phoneNumber"]
     ];
 
-    const previews = preview.map(preview => {
+    //map out preview options
+    const previews = preview.map((preview, i) => {
       const text = "Show " + preview[0];
       return (
         <Option
+          key={i}
           selected={this.state[preview[1]]}
           colorStyle={this.props.colorStyle}
           label={preview[1]}
@@ -220,10 +231,12 @@ class HomePage extends Component {
       );
     });
 
+    //map out sorting options
     const sorting = ["First name", "Last name"];
-    const sortings = sorting.map(sorting => {
+    const sortings = sorting.map((sorting, i) => {
       return (
         <Option
+          key={i}
           selected={this.state.sorting === sorting}
           colorStyle={this.props.colorStyle}
           label={sorting}
@@ -233,10 +246,12 @@ class HomePage extends Component {
       );
     });
 
+    //map out colorStyle options
     const colorStyle = ["Clean air", "Dark fusion", "Warm wind"];
-    const colorStyles = colorStyle.map(colorStyle => {
+    const colorStyles = colorStyle.map((colorStyle, i) => {
       return (
         <Option
+          key={i}
           selected={this.props.colorStyle === colorStyle}
           colorStyle={this.props.colorStyle}
           text={colorStyle}
@@ -246,9 +261,11 @@ class HomePage extends Component {
       );
     });
 
-    const tags = jobs.map(job => {
+    //map out filter options
+    const tags = jobs.map((job, i) => {
       return (
         <Filter
+          key={i}
           selected={this.state.filters.includes(job)}
           text={job}
           colorStyle={this.props.colorStyle}
@@ -258,9 +275,11 @@ class HomePage extends Component {
       );
     });
 
-    const filtersTops = this.state.filters.map(filter => {
+    //map out filter buttons on the top
+    const filtersTops = this.state.filters.map((filter, i) => {
       return (
         <FilterTop
+          key={i}
           label={filter}
           colorStyle={this.props.colorStyle}
           onClick={this.removeFilter}
@@ -272,6 +291,7 @@ class HomePage extends Component {
 
     return (
       <div className={"HomePage " + classColor}>
+        {/* top bar */}
         <div className={"topBar " + classColor}>
           <figure>
             <img
@@ -289,6 +309,7 @@ class HomePage extends Component {
             </figure>
           </Link>
         </div>
+        {/* search bar */}
         <div className="blackspace" />
         <div className="searchLine">
           <input
@@ -304,10 +325,12 @@ class HomePage extends Component {
             />
           </div>
         </div>
+        {/* filter buttons on the top */}
         <div className={filterTop + classColor}>
           {"Filtered by: "}
           {filtersTops}
         </div>
+        {/* main contact list */}
         <div className="main">
           <div className="contacts">
             {contacts}
@@ -317,9 +340,9 @@ class HomePage extends Component {
           </div>
           <div className={"sideBar " + classColor}>#{letterButtons}</div>
         </div>
-
+        {/* the grey cover */}
         <div className={classes} onClick={this.hide} />
-
+        {/* options memu */}
         <div className={optionClass + classColor}>
           <div className={"top-bar " + classColor}>Contact List Options</div>
           <div className={"optionName " + classColor}>Preview</div>
@@ -329,7 +352,7 @@ class HomePage extends Component {
           <div className={"optionName " + classColor}>Color Style</div>
           {colorStyles}
         </div>
-
+        {/* filter menu */}
         <div className={filterClass + classColor}>
           <div className={"top-bar " + classColor}>Filters</div>
           <div className={"jobs " + classColor}> Jobs </div>
