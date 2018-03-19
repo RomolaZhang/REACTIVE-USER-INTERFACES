@@ -1,0 +1,53 @@
+.App {
+  margin: 30px;
+}
+
+input {
+  width: 20px;
+  outline: none;
+}
+
+h1 {
+  color: #155965;
+}
+
+button {
+  border-style: solid;
+  border-width: thin;
+  border-radius: 2px;
+  border-color: #2f858f;
+  outline: none;
+  flex: 0.5;
+  color: #155965;
+  background-color: transparent;
+}
+
+.block {
+  display: flex;
+  width: 300px;
+}
+
+.Form {
+  display: flex;
+  width: 320px;
+  margin-top: 5px;
+}
+
+.name {
+  flex: 1;
+  padding: 4px;
+  font-family: Helvetica Neue;
+  color: #2f858f;
+}
+
+.email {
+  flex: 2;
+  text-align: left;
+  padding: 4px;
+  font-family: Helvetica Neue;
+  color: #2f858f;
+}
+
+input.email {
+  flex: 1.5;
+}
