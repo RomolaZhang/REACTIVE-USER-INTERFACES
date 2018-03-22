@@ -27,7 +27,10 @@ class Contact extends Component {
         <div className="anchor" id={this.props.label} />
         <Link to={"/contacts/" + this.props.id}>
           <div className={"contact " + classColor}>
-            <div className={"name " + classColor}>{this.props.name}</div>
+            <div className={"name " + classColor}>
+              {this.props.firstName + " "}
+              {this.props.lastName}
+            </div>
             <div className={emailClasses + classColor}>{this.props.email}</div>
             <div className={addressClasses + classColor}>
               {this.props.address}

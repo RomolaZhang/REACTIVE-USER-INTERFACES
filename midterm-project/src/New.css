@@ -1,25 +1,77 @@
+.inputname {
+  margin-left: 85px;
+  outline: none;
+  display: flex;
+  width: 250px;
+}
+
+.save {
+  position: absolute;
+  right: 28px;
+  top: 34px;
+  font-family: Helvetica Neue;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.save.Cleanair {
+  color: #0679c1;
+}
+
+.save.Darkfusion {
+  color: #09937b;
+}
+
+.save.Warmwind {
+  color: white;
+}
+
+input.job {
+  outline: none;
+  border-style: none;
+  width: 150px;
+}
+
 input.bigname {
   border-style: none;
   border-bottom-style: solid;
-  margin-left: 107px;
-  width: 200px;
-  outline: none;
   border-width: thin;
-  margin-top: 100px;
+  width: 75px;
+  height: 30px;
+  flex: 1;
+  font-size: 22px;
+  outline: none;
+  font-family: Helvetica Neue;
+  color: #787878;
+}
+
+input.bigname::-webkit-input-placeholder {
+  font-size: 18px;
+}
+
+input.firstname {
+  margin-right: 20px;
 }
 
 input.content {
-  padding: 5px;
   width: 160px;
-  border-style: solid;
-  border-radius: 5px;
+  border-style: none;
+  border-bottom-style: solid;
   outline: none;
   border-width: thin;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 input.bigname.Cleanair {
   border-color: #707070;
+}
+
+input.bigname.Darkfusion {
+  border-color: #707070;
+}
+
+input.bigname.Warmwind {
+  border-color: white;
 }
 
 input.content.Cleanair {

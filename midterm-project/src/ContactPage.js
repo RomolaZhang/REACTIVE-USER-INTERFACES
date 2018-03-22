@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import "./ContactPage.css";
 import Return from "./return.png";
 import ProfileIcon from "./profileicon.png";
+import New from "./New";
 
 class ContactPage extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     const classColor = this.props.colorStyle.replace(/\s/g, "");
 
@@ -15,10 +20,15 @@ class ContactPage extends Component {
             <img className={"return " + classColor} src={Return} />
           </Link>
         </div>
+        <Link to={"/edit/" + this.props.contact.id}>
+          <div className={"save " + classColor}>Edit</div>
+        </Link>
         <div className={"line " + classColor} />
         <div className={"circleimg " + classColor} />
         <img className="img" src={ProfileIcon} />
-        <div className={"bigname " + classColor}>{this.props.contact.name}</div>
+        <div className={"bigname " + classColor}>
+          {this.props.contact.firstName + " " + this.props.contact.lastName}
+        </div>
         <div className={"job " + classColor}>{this.props.contact.job}</div>
         <div className={"property " + classColor}>email</div>
         <div className={"content " + classColor}>

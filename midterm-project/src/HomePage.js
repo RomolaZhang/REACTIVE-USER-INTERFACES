@@ -117,7 +117,8 @@ class HomePage extends Component {
           jobs.push(contact.job);
         }
         const input = this.state.search.toLowerCase();
-        const name = contact.name.toLowerCase();
+        const name =
+          contact.firstName.toLowerCase() + contact.lastName.toLowerCase();
         return name.match(input);
       });
     }
@@ -125,16 +126,14 @@ class HomePage extends Component {
     //sorting
     if (this.state.sorting === "First name") {
       arrCopy = arrCopy.sort(function(a, b) {
-        if (a.name < b.name) return -1;
-        if (a.name > b.name) return 1;
+        if (a.firstName.toLowerCase() < b.firstName.toLowerCase()) return -1;
+        if (a.firstName.toLowerCase() > b.firstName.toLowerCase()) return 1;
         return 0;
       });
     } else if (this.state.sorting === "Last name") {
       arrCopy = arrCopy.sort(function(a, b) {
-        const p = a.name.indexOf(" ");
-        const q = b.name.indexOf(" ");
-        if (a.name[p + 1] < b.name[q + 1]) return -1;
-        if (a.name[p + 1] > b.name[q + 1]) return 1;
+        if (a.lastName.toLowerCase() < b.lastName.toLowerCase()) return -1;
+        if (a.lastName.toLowerCase() > b.lastName.toLowerCase()) return 1;
         return 0;
       });
     }
@@ -156,7 +155,12 @@ class HomePage extends Component {
 
     //map out contact elements and get the inital letters
     const contacts = arrCopy.map((contact, i) => {
-      let label = contact.name[0].toUpperCase();
+      let label;
+      if (this.state.sorting === "First name") {
+        label = contact.firstName[0].toUpperCase();
+      } else {
+        label = contact.lastName[0].toUpperCase();
+      }
       if (!letters.includes(label)) {
         letters.push(label);
       }
@@ -165,7 +169,8 @@ class HomePage extends Component {
           key={"contact" + contact.id}
           id={contact.id}
           label={label}
-          name={contact.name}
+          firstName={contact.firstName}
+          lastName={contact.lastName}
           addressState={this.state.address}
           address={contact.address}
           emailState={this.state.email}

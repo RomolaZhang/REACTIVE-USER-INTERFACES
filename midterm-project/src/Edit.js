@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./New.css";
+import "./Edit.css";
 import Return from "./return.png";
 import ProfileIcon from "./profileicon.png";
 
-//I can also edit and delete every contact now!!!!!
-
-class New extends Component {
+class Edit extends Component {
   constructor(props) {
     super(props);
     this.save = this.save.bind(this);
     this.changed = this.changed.bind(this);
+    this.del = this.del.bind(this);
     this.state = {
-      firstName: "",
-      lastName: "",
-      job: "",
-      email: "",
-      address: "",
-      phoneNumber: ""
+      firstName: this.props.contact.firstName,
+      lastName: this.props.contact.lastName,
+      job: this.props.contact.job,
+      email: this.props.contact.email,
+      address: this.props.contact.address,
+      phoneNumber: this.props.contact.phoneNumber
     };
+  }
+
+  del() {
+    this.props.del(this.props.contact.id);
   }
 
   changed(e) {
@@ -34,7 +38,8 @@ class New extends Component {
       this.state.job,
       this.state.email,
       this.state.address,
-      this.state.phoneNumber
+      this.state.phoneNumber,
+      this.props.contact.id
     );
   }
 
@@ -48,7 +53,7 @@ class New extends Component {
             <img className={"return " + classColor} src={Return} />
           </Link>
         </div>
-        <Link to="/">
+        <Link to={"/contacts/" + this.props.contact.id}>
           <div onClick={this.save} className={"save " + classColor}>
             Save
           </div>
@@ -101,9 +106,14 @@ class New extends Component {
           className={"content " + classColor}
         />
         <div className={"property notes " + classColor}>notes</div>
+        <Link to={"/"}>
+          <div className={"delete " + classColor} onClick={this.del}>
+            Delete Contact
+          </div>
+        </Link>
       </div>
     );
   }
 }
 
-export default New;
+export default Edit;
