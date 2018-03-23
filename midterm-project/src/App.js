@@ -234,7 +234,7 @@ class App extends Component {
     document.body.className = classColor;
   }
 
-  save(firstName, lastName, job, email, address, phoneNumber) {
+  save(firstName, lastName, email, address, job, phoneNumber) {
     let copy = this.state.contacts.slice();
     const lastid = copy[copy.length - 1].id;
     copy.push({

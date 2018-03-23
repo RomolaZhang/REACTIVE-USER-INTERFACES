@@ -262,6 +262,7 @@ p {
   font-family: Helvetica Neue;
   font-size: 20px;
   padding: 10px;
+  position: fixed;
   width: 100%;
 }
 
