@@ -14,9 +14,9 @@ class Edit extends Component {
     this.state = {
       firstName: this.props.contact.firstName,
       lastName: this.props.contact.lastName,
-      job: this.props.contact.job,
       email: this.props.contact.email,
       address: this.props.contact.address,
+      job: this.props.contact.job,
       phoneNumber: this.props.contact.phoneNumber
     };
   }
@@ -35,9 +35,9 @@ class Edit extends Component {
     this.props.onClick(
       this.state.firstName,
       this.state.lastName,
-      this.state.job,
       this.state.email,
       this.state.address,
+      this.state.job,
       this.state.phoneNumber,
       this.props.contact.id
     );
