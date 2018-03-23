@@ -110,12 +110,15 @@ class HomePage extends Component {
 
     let jobs = [];
 
+    arrCopy.map(contact => {
+      if (!jobs.includes(contact.job)) {
+        jobs.push(contact.job);
+      }
+    });
+
     //search
     if (this.state.onSearch !== "") {
       arrCopy = arrCopy.filter(contact => {
-        if (!jobs.includes(contact.job)) {
-          jobs.push(contact.job);
-        }
         const input = this.state.search.toLowerCase();
         const name =
           contact.firstName.toLowerCase() + contact.lastName.toLowerCase();
@@ -350,7 +353,7 @@ class HomePage extends Component {
         {/* options memu */}
         <div className={optionClass + classColor}>
           <div className={"top-bar " + classColor}>Contact List Options</div>
-          <div className={"optionName " + classColor}>Preview</div>
+          <div className={"optionName one " + classColor}>Preview</div>
           {previews}
           <div className={"optionName " + classColor}>Sort by</div>
           {sortings}

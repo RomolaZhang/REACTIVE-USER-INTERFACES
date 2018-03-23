@@ -223,6 +223,7 @@ p {
   bottom: 0;
   height: 450px;
   width: 100%;
+  overflow: auto;
 }
 
 .filterTop {
@@ -261,6 +262,7 @@ p {
   font-family: Helvetica Neue;
   font-size: 20px;
   padding: 10px;
+  width: 100%;
 }
 
 .top-bar.Cleanair {
@@ -289,6 +291,10 @@ p {
   margin-top: 15px;
 }
 
+.optionName.one {
+  margin-top: 55px;
+}
+
 .optionName.Cleanair {
   color: #045e96;
 }
@@ -303,6 +309,7 @@ p {
 
 .jobs {
   margin: 15px;
+  margin-top: 55px;
   margin-bottom: 0;
   font-family: Helvetica Neue;
   font-size: 20px;

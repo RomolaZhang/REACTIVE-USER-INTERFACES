@@ -240,9 +240,9 @@ class App extends Component {
     copy.push({
       firstName: firstName,
       lastName: lastName,
-      job: job,
       email: email,
       address: address,
+      job: job,
       phoneNumber: phoneNumber,
       id: lastid + 1
     });
@@ -262,7 +262,7 @@ class App extends Component {
     });
   }
 
-  edit(firstName, lastName, job, email, address, phoneNumber, id) {
+  edit(firstName, lastName, email, address, job, phoneNumber, id) {
     let copy = this.state.contacts.slice();
     const contact = this.state.contacts.find(c => c.id === parseInt(id));
     let new_contact = contact;
@@ -270,9 +270,9 @@ class App extends Component {
     new_contact = {
       firstName: firstName,
       lastName: lastName,
-      job: job,
       email: email,
       address: address,
+      job: job,
       phoneNumber: phoneNumber,
       id: id
     };

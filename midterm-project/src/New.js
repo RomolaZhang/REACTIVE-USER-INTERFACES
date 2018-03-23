@@ -14,9 +14,9 @@ class New extends Component {
     this.state = {
       firstName: "",
       lastName: "",
-      job: "",
       email: "",
       address: "",
+      job: "",
       phoneNumber: ""
     };
   }
@@ -31,9 +31,9 @@ class New extends Component {
     this.props.onClick(
       this.state.firstName,
       this.state.lastName,
-      this.state.job,
       this.state.email,
       this.state.address,
+      this.state.job,
       this.state.phoneNumber
     );
   }
