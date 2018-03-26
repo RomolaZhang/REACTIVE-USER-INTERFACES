@@ -235,7 +235,7 @@ class App extends Component {
   }
 
   save(firstName, lastName, email, address, job, phoneNumber) {
-    let copy = this.state.contacts.slice();
+    let copy = Object.assign([], this.state.contacts);
     const lastid = copy[copy.length - 1].id;
     copy.push({
       firstName: firstName,
@@ -253,7 +253,7 @@ class App extends Component {
   }
 
   del(id) {
-    let copy = this.state.contacts.slice();
+    let copy = Object.assign([], this.state.contacts);
     const contact = this.state.contacts.find(c => c.id === parseInt(id));
     const index = copy.indexOf(contact);
     copy.splice(index, 1);
@@ -263,7 +263,7 @@ class App extends Component {
   }
 
   edit(firstName, lastName, email, address, job, phoneNumber, id) {
-    let copy = this.state.contacts.slice();
+    let copy = Object.assign([], this.state.contacts);
     const contact = this.state.contacts.find(c => c.id === parseInt(id));
     let new_contact = contact;
     const index = copy.indexOf(contact);
