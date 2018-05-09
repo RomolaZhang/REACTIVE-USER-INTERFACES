@@ -1,0 +1,98 @@
+.Seed {
+  grid-row: auto;
+  grid-column: auto;
+  width: 100%;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: white;
+  box-shadow: 1px 1px 18px -5px rgba(0, 0, 0, 0.3);
+}
+
+.done {
+  background-color: #777777;
+  color: white;
+  opacity: 0.9;
+}
+
+.change {
+  position: absolute;
+  border-radius: 6px;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.9;
+}
+
+.changeicon {
+  margin-top: 15px;
+  text-align: center;
+  font-family: Avenir;
+  letter-spacing: -2px;
+  font-weight: 500;
+  font-size: 24px;
+  color: #c12b67;
+}
+
+.changeIcon {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.change-enter {
+  animation: show2 0.2s forwards;
+}
+
+.change-exit {
+  animation: show2 0.3s reverse forwards;
+}
+
+.seedname {
+  font-size: 16px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  font-weight: 500;
+  font-family: Avenir;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.seedtime {
+  height: 22px;
+  line-height: 22px;
+  color: grey;
+  font-size: 14px;
+  text-align: center;
+  font-family: Avenir;
+  color: #e74f89;
+}
+
+@keyframes show2 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.9;
+  }
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

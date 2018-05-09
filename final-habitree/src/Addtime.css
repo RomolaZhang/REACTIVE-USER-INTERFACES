@@ -1,0 +1,62 @@
+.Addtime {
+  position: fixed;
+  top: 35%;
+  left: 7%;
+  width: 350px;
+  height: 200px;
+  background-color: #fafafa;
+  border-radius: 5px;
+  box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.heading {
+  font-family: Avenir Next;
+  font-size: 20px;
+  margin-top: 25px;
+  text-align: center;
+}
+
+.heading.save {
+  color: #c12b67;
+  font-weight: 500;
+}
+
+.goalname {
+  font-family: Avenir;
+  font-size: 20px;
+}
+
+.addbox {
+  margin: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.flexchild {
+  text-align: center;
+  flex: 8;
+  font-family: Avenir;
+  font-size: 20px;
+}
+
+.flexadd {
+  flex: 1;
+  text-align: center;
+  font-family: Avenir;
+  font-size: 22px;
+}
+
+.inputTime {
+  font-family: Avenir;
+  display: inline;
+  width: 50px;
+  background-color: transparent;
+  border: none;
+  border-bottom: solid;
+  border-width: 1px;
+  font-size: 20px;
+  outline: none;
+  text-align: center;
+}

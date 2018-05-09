@@ -1,0 +1,52 @@
+.Seedbox {
+  background-color: white;
+  border-radius: 5px;
+  margin: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  box-shadow: 2px 2px 20px -5px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+  font-size: 18px;
+  font-family: Avenir;
+  margin: 10px;
+}
+
+.progress {
+  font-size: 18px;
+  color: #3c3c3c;
+  font-family: Avenir;
+  float: right;
+  margin: 10px;
+}
+
+.selected {
+  background-color: #777777;
+  color: white;
+}
+
+.editbox {
+  padding: 10px;
+  padding-top: 5px;
+}
+
+.edit {
+  color: #cccccc;
+  font-size: 18px;
+  font-family: Avenir;
+}
+
+.delete {
+  float: right;
+  color: #f04141;
+}
+
+.edit.input {
+  font-size: 16px;
+  width: 40px;
+}
+
+.edit::placeholder {
+  color: #d3d3d3;
+}
